@@ -1,0 +1,66 @@
+package Task1;
+import java.util.Scanner;
+
+
+public class Task1 {
+
+	public static void main(String[] args) {
+		
+	// generating random number between 1 and 100
+		        int randnb = (int) (Math.random() * 100) + 1;
+		        int numberOfAttempts = 1;
+		        boolean correctguess = false;
+		        Scanner s = new Scanner(System.in);
+
+		     
+		      
+		        System.out.println("Guess a number between 1 and 100: "
+		        		+ "\nGenerated Number is "+randnb + 
+		        		"\nyou have only 5 attempts ");
+		        
+
+		        
+		        while (!correctguess && numberOfAttempts <= 5) 
+		        {
+		            
+		            int userGuess = s.nextInt();
+
+		        
+		            if (userGuess == randnb) 
+		            {
+		            	correctguess  = true;
+		            } 
+		            else 
+		            {
+		                numberOfAttempts++;
+		                if (userGuess < randnb) 
+		                {
+		                    System.out.println("Your guess is low. the correct nbr is higher");
+		                } else 
+		                {
+		                    System.out.println("Your guess is  high. the correct nbr is lower");
+		                }
+		            }
+		        }
+
+		    
+		        s.close();
+
+		     
+		        if (!correctguess) 
+		        {
+		       
+		        	 System.out.println("You loose! The correct answer was " + randnb);
+		        } else 
+		        {
+		        	
+		         	System.out.println("Congratulations! The number was " + randnb); 
+		        }
+		    
+		
+
+		
+		
+	}
+
+}
